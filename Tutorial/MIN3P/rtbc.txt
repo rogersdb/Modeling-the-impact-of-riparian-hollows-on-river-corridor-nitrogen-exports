@@ -1,0 +1,262 @@
+
+! --------------------------------------------------------------------------
+! INITIAL CONDITION - REACTIVE TRANSPORT (DATA BLOCK 15)
+! --------------------------------------------------------------------------
+'initial condition - reactive transport'                                    
+1                             ;number of zones
+ 
+! --------------------------------------------------------------------------
+'number and name of zone'
+1
+'inflow'
+
+'boundary type'
+'third'
+
+'concentration input'
+4.00d-03   ;'ch2o'
+5.00d-02    ;'no3-1'
+5.40d+01    ;'co3-2'
+2.80d-03    ;'n2(aq)'
+7.65        ;'h+1'
+4.00d-01    ;'o2(aq)'
+2.00d-04    ;'nh4+1'
+7.90d+01    ;'ca+2'
+5.00d-02    ;'fe+2'
+5.00d-03    ;'fe+3'
+1.00d-02    ;'hs-1'
+1.00d+01   ;'so4-2'
+
+'mineral input'
+5.0d-02	.true.	'constant'   	;phi, minequil, type  	{SOM_ch2o}
+1.0d-10	1.0d-14	0.0   			;phi_min, k_eff, sat	{SOM_ch2o}
+7.0d-03	.true.	'constant'   	;phi, minequil, type  	{pyrite}
+1.0d-10	1.0d-12	0.0  			;phi_min, k_eff, sat	{pyrite}
+
+'extent of zone'
+0.0 2.0 0.0 1.0 0.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+ 
+'done'
+ 
+! --------------------------------------------------------------------------
+! BOUNDARY CONDITIONS - REACTIVE TRANSPORT (DATA BLOCK 16)
+! --------------------------------------------------------------------------
+'boundary conditions - reactive transport'
+3						;number of zones
+ 
+! --------------------------------------------------------------------------
+'number and name of zone'
+1
+'inflow'
+
+'boundary type'
+'third'
+
+'concentration input'
+4.00d-03   ;'ch2o'
+5.00d-02    ;'no3-1'
+5.40d+01    ;'co3-2'
+2.80d-03    ;'n2(aq)'
+7.65        ;'h+1'
+4.00d-01    ;'o2(aq)'
+2.00d-04    ;'nh4+1'
+7.90d+01    ;'ca+2'
+5.00d-02    ;'fe+2'
+5.00d-03    ;'fe+3'
+1.00d-02    ;'hs-1'
+1.00d+01   ;'so4-2'
+
+'mineral input'
+5.0d-02	.true.	'constant'   	;phi, minequil, type  	{SOM_ch2o}
+1.0d-10	1.0d-14	0.0   			;phi_min, k_eff, sat	{SOM_ch2o}
+7.0d-03	.true.	'constant'   	;phi, minequil, type  	{pyrite}
+1.0d-10	1.0d-12	0.0  			;phi_min, k_eff, sat	{pyrite}
+
+'extent of zone'
+0.0 0.0 0.0 1.0 0.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+ 
+! --------------------------------------------------------------------------
+'number and name of zone'
+2
+'outflow'
+
+'boundary type'
+'second'
+
+'extent of zone'
+2.0 2.0 0.0 1.0 0.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+ 
+! --------------------------------------------------------------------------
+'number and name of zone'
+3
+'hollow surface'
+
+'boundary type'
+'third'
+
+'concentration input'
+1.00d-03   ;'ch2o'
+2.00d-01    ;'no3-1'
+1.70d+01    ;'co3-2'
+5.00d-05    ;'n2(aq)'	
+8.0         ;'h+1'	
+1.00d+01    ;'o2(aq)'	
+2.30d-04    ;'nh4+1'	
+3.00d+00    ;'ca+2'	
+2.00d-02    ;'fe+2'	
+2.00d-03    ;'fe+3'	
+1.00d-04    ;'hs-1'	
+2.00d+01    ;'so4-2'
+
+'mineral input'
+5.0d-02	.true.	'constant'   	;phi, minequil, type  	{SOM_ch2o}
+1.0d-10	1.0d-14	0.0   			;phi_min, k_eff, sat	{SOM_ch2o}
+7.0d-03	.true.	'constant'   	;phi, minequil, type  	{pyrite}
+1.0d-10	1.0d-12	0.0  			;phi_min, k_eff, sat	{pyrite}
+
+'extent of zone'
+0.0 2.0 0.0 1.0 5.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+! --------------------------------------------------------------------------
+'update boundary conditions'
+3                   ;number of target read times
+4.05208333333333              ;target read times
+11
+12.92708
+
+! --------------------------------------------------------------------------
+! target read time 1
+'start of target read time input'
+1
+
+! --------------------------------------------------------------------------
+'number and name of zone'
+3
+'hollow surface'
+
+'boundary type'
+'third'
+
+'concentration input'
+3.00d-03   ;'ch2o'
+6.50d-01    ;'no3-1'
+3.00d+01    ;'co3-2'
+1.35d-01    ;'n2(aq)'
+5.3         ;'h+1'
+8.64d+00    ;'o2(aq)'
+1.80d-03    ;'nh4+1'
+1.60d-01    ;'ca+2'
+5.00d-03    ;'fe+2'
+5.00d-04    ;'fe+3'
+1.00d-04    ;'hs-1'
+3.00d-01   ;'so4-2'
+
+'mineral input'
+1.0d-10	.true.	'constant'   	;phi, minequil, type  	{SOM_ch2o}
+1.0d-10	1.0d-14	0.0   			;phi_min, k_eff, sat	{SOM_ch2o}
+1.0d-10	.true.	'constant'   	;phi, minequil, type  	{pyrite}
+1.0d-10	1.0d-12	0.0  			;phi_min, k_eff, sat	{pyrite}
+
+'extent of zone'
+0.0 2.0 0.0 1.0 5.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+'end of target read time input'
+
+! --------------------------------------------------------------------------
+! target read time 2
+'start of target read time input'
+2
+
+! --------------------------------------------------------------------------
+'number and name of zone'
+3
+'hollow surface'
+
+'boundary type'
+'third'
+
+'concentration input'
+3.00d-03   ;'ch2o'
+4.39d-01    ;'no3-1'
+3.00d+01    ;'co3-2'
+1.35d-01    ;'n2(aq)'
+5.3         ;'h+1'
+8.64d+00    ;'o2(aq)'
+5.90d-04    ;'nh4+1'
+6.70d-02    ;'ca+2'
+5.00d-03    ;'fe+2'
+5.00d-04    ;'fe+3'
+1.00d-04    ;'hs-1'
+1.54d-01   ;'so4-2'
+
+'mineral input'
+1.0d-10	.true.	'constant'   	;phi, minequil, type  	{SOM_ch2o}
+1.0d-10	1.0d-14	0.0   			;phi_min, k_eff, sat	{SOM_ch2o}
+1.0d-10	.true.	'constant'   	;phi, minequil, type  	{pyrite}
+1.0d-10	1.0d-12	0.0  			;phi_min, k_eff, sat	{pyrite}
+
+'extent of zone'
+0.0 2.0 0.0 1.0 5.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+'end of target read time input'
+
+! --------------------------------------------------------------------------
+! target read time 3
+'start of target read time input'
+3
+
+! --------------------------------------------------------------------------
+'number and name of zone'
+3
+'hollow surface'
+
+'boundary type'
+'third'
+
+'concentration input'
+3.00d-03   ;'ch2o'
+6.50d-01    ;'no3-1'
+3.00d+01    ;'co3-2'
+1.35d-01    ;'n2(aq)'
+5.3         ;'h+1'
+8.64d+00    ;'o2(aq)'
+1.80d-03    ;'nh4+1'
+1.60d-01    ;'ca+2'
+5.00d-03    ;'fe+2'
+5.00d-04    ;'fe+3'
+1.00d-04    ;'hs-1'
+3.00d-01   ;'so4-2'
+
+'mineral input'
+1.0d-10	.true.	'constant'   	;phi, minequil, type  	{SOM_ch2o}
+1.0d-10	1.0d-14	0.0   			;phi_min, k_eff, sat	{SOM_ch2o}
+1.0d-10	.true.	'constant'   	;phi, minequil, type  	{pyrite}
+1.0d-10	1.0d-12	0.0  			;phi_min, k_eff, sat	{pyrite}
+
+'extent of zone'
+0.0 2.0 0.0 1.0 5.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+'end of target read time input'
+
+'done'

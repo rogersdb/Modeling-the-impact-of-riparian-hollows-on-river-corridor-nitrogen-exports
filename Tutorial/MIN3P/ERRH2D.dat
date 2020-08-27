@@ -1,0 +1,413 @@
+!------------------------------------------------------------------------
+! GLOBAL CONTROL PARAMETERS (DATA BLOCK 1)
+!------------------------------------------------------------------------
+'global control parameters'
+
+'ERRH2D'
+
+.true.					;varsat_flow
+.false.					;steady_flow
+.false.					;fully_saturated
+.false.					;reactive_transport
+
+'done'
+
+!------------------------------------------------------------------------
+! GEOCHEMICAL SYSTEM (DATA BLOCK 2)
+!------------------------------------------------------------------------
+'geochemical system'
+
+'components'
+12						;number of components
+'ch2o'					;names of components
+'no3-1'
+'co3-2'
+'n2(aq)'
+'h+1'
+'o2(aq)'
+'nh4+1'
+'ca+2'
+'fe+2'
+'fe+3'
+'hs-1'
+'so4-2'
+
+'gases'
+3						;number of gases
+'n2(g)'
+'co2(g)'
+'o2(g)'
+
+'secondary aqueous species'
+34						;number of secondary aqueous species
+'h2so4(aq)'				;names of secondary aqueous species
+'h2(aq)'
+'feco3+'
+'oh-'
+'nh3aq'
+'nh4so4-'
+'caoh+'
+'cahco3+'
+'caco3aq'
+'caso4aq'
+'cahso4+'
+'feoh+'
+'feoh3-1'
+'feso4aq'
+'fehso4+'
+'fehco3+'
+'feco3aq'
+'feoh2aq'
+'fe(hs)2aq'
+'fe(hs)3-'
+'feoh+2'
+'feso4+'
+'fehso42+'
+'feoh2+'
+'feoh3aq'
+'feoh4-'
+'fe(so4)2-'
+'fe2(oh)2+4'
+'fe3(oh)4+5'
+'hco3-'
+'h2co3aq'
+'hso4-'
+'h2saq'
+'s-2'
+
+'intra-aqueous kinetic reactions'
+10						;number of intra-aqueous kinetic reactions
+'ch2o_no3'				;names of intra-aqueous kinetic reactions
+'nh4_ox'
+'ch2o_ox'
+'n2_nh4'
+'fe+3_ch2o'
+'fe+2_ox'
+'so4_ch2o'
+'hs_ox'
+'no3_nh4_hs'
+'no3_nh4'
+
+'scaling for intra-aqueous kinetic reactions'
+5.0d-04					;'ch2o_no3'; Trauth 2015 gives mol/L/d
+2.8d-07					;'nh4_ox' ;Raimonet 2015 gives 2.8d-06 - 5.6d-05; Knowles 1965 in Raimonet gives 5.6d-06 - 2.8d-05; Cebron and Garnier 2005 in Raimonet gives 1.4d-05 - 1.8d-05
+3.0d-04					;'ch2o_ox'
+1.0d-04					;'n2_nh4'
+1.0d-08					;'fe+3_ch2o'
+1.0d-11					;'fe+2_ox'
+1.0d-04					;'so4_ch2o'
+1.0d-08					;'hs_ox'
+5.0d-06					;'no3_nh4_hs'
+5.0d-06					;'no3_nh4'
+
+'minerals'
+2						;number of minerals
+'SOM_ch2o'				;names of minerals
+'pyrite'
+
+'use new database format'
+
+'database directory'
+'C:\MIN3P\Examples\database\ERRH_db'
+
+'compute alkalinity'
+
+'define input units'
+'mg/l'
+
+'define temperature'
+20.0
+
+'done'
+
+!------------------------------------------------------------------------
+! SPATIAL DISCRETIZATION (DATA BLOCK 3)
+!------------------------------------------------------------------------
+'spatial discretization'
+
+'read unstructured grid from file'
+
+'done'
+
+!------------------------------------------------------------------------
+! TIME STEP CONTROL (DATA BLOCK 4)
+!------------------------------------------------------------------------
+'time step control - global system'
+
+'days'					;time unit
+0.0						;time at start of solution
+31.0					;final solution time
+0.025					;maximum time step
+1.d-09					;minimum time step
+
+'done'
+
+!------------------------------------------------------------------------
+! CONTROL PARAMETERS - LOCAL CHEMISTRY (DATA BLOCK 5)
+!------------------------------------------------------------------------
+
+
+!------------------------------------------------------------------------
+! CONTROL PARAMETERS - VARIABLY-SATURATED FLOW (DATA BLOCK 6)
+!------------------------------------------------------------------------
+'control parameters - variably saturated flow'
+
+'mass balance'
+
+'done'
+
+!------------------------------------------------------------------------
+! CONTROL PARAMETERS - REACTIVE TRANSPORT (DATA BLOCK 7)
+!------------------------------------------------------------------------
+'control parameters - reactive transport'
+
+'mass balance'
+
+'done'
+
+!------------------------------------------------------------------------
+! OUTPUT CONTROL (DATA BLOCK 8)
+!------------------------------------------------------------------------
+'output control'
+
+'output of spatial data'
+124									  ;number of output times (spatial data)
+0.25	0.5	0.75	1
+1.25	1.5	1.75	2
+2.25	2.5	2.75	3
+3.25	3.5	3.75	4
+4.25	4.5	4.75	5
+5.25	5.5	5.75	6
+6.25	6.5	6.75	7
+7.25	7.5	7.75	8
+8.25	8.5	8.75	9
+9.25	9.5	9.75	10
+10.25	10.5	10.75	11
+11.25	11.5	11.75	12
+12.25	12.5	12.75	13
+13.25	13.5	13.75	14
+14.25	14.5	14.75	15
+15.25	15.5	15.75	16
+16.25	16.5	16.75	17
+17.25	17.5	17.75	18
+18.25	18.5	18.75	19
+19.25	19.5	19.75	20
+20.25	20.5	20.75	21
+21.25	21.5	21.75	22
+22.25	22.5	22.75	23
+23.25	23.5	23.75	24
+24.25	24.5	24.75	25
+25.25	25.5	25.75	26
+26.25	26.5	26.75	27
+27.25	27.5	27.75	28
+28.25	28.5	28.75	29
+29.25	29.5	29.75	30
+30.25	30.5	30.75	31
+
+'output of transient data'
+6						;number of output locations (transient data)
+10						;time steps between output (transient data)
+6 165 158 152			;control volume number for transient data
+209 53
+
+'done'
+
+!------------------------------------------------------------------------
+! PHYSICAL PARAMETERS: POROUS MEDIUM (DATA BLOCK 9)
+!------------------------------------------------------------------------
+'physical parameters - porous medium'
+2						;number of material property zones
+
+!------------------------------------------------------------------------
+'number and name of zone'
+1
+'top soil'
+0.45					;porosity
+
+'extent of zone'
+0.0 2.0 0.0 1.0 0.0 5.0
+
+'end of zone'
+!------------------------------------------------------------------------
+
+!------------------------------------------------------------------------
+'number and name of zone'
+2
+'graded cobble'
+0.40					;porosity
+
+'extent of zone'
+0.0 2.0 0.0 1.0 0.0 4.0
+
+
+'end of zone'
+!------------------------------------------------------------------------
+
+'done'
+
+!------------------------------------------------------------------------
+! PHYSICAL PARAMETERS - VARIABLY-SATURATED FLOW (DATA BLOCK 10)
+!------------------------------------------------------------------------
+'physical parameters - variably saturated flow'
+
+!------------------------------------------------------------------------
+'top soil'				;name of zone
+
+'hydraulic conductivity in x-direction'
+1.2d-05                	;K_xx m/d
+
+'hydraulic conductivity in z-direction'
+0.4d-05                 ;K_zz
+
+'specific storage coefficient'
+1.0d-04
+
+'soil hydraulic function parameters'
+0.15                  	;residual saturation
+2.5                   	;van genuchten - alpha m-1
+1.5                   	;van genuchten - n
+0.5                   	;expn (l - pore connectivity parameter)
+0.0                    	;air entry pressure
+
+'end of zone'
+!------------------------------------------------------------------------
+
+!------------------------------------------------------------------------
+'graded cobble'
+
+'hydraulic conductivity in x-direction'
+4.8d-05                	;K_xx
+
+'hydraulic conductivity in z-direction'
+1.6d-05                 ;K_zz
+
+'specific storage coefficient'
+1.0d-04
+
+'soil hydraulic function parameters'
+0.13                  	;residual saturation
+3.0                   	;van genuchten - alpha m-1
+2.0                   	;van genuchten - n
+0.5                   	;expn (l - pore connectivity parameter)
+0.0                    	;air entry pressure
+
+'end of zone'
+!------------------------------------------------------------------------
+
+'done'
+
+!------------------------------------------------------------------------
+! PHYSICAL PARAMETERS - REACTIVE TRANSPORT (DATA BLOCK 11)
+!------------------------------------------------------------------------
+'physical parameters - reactive transport'
+
+'diffusion coefficients'                                                    
+1.9d-9                 	;aqueous phase
+2.0d-5                 	;gaseous phase
+
+! --------------------------------------------------------------------------
+'top soil'
+
+'longitudinal dispersivity'
+0.1
+
+'transverse horizontal dispersivity'
+0.01
+
+'transverse vertical dispersivity'
+0.01
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+! --------------------------------------------------------------------------
+'graded cobble'
+
+'longitudinal dispersivity'
+0.05
+
+'transverse horizontal dispersivity'
+0.005
+
+'transverse vertical dispersivity'
+0.005
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+'done'
+
+! --------------------------------------------------------------------------
+! INITIAL CONDITION - VARIABLY-SATURATED FLOW (DATA BLOCK 12)
+! --------------------------------------------------------------------------
+'initial condition - variably saturated flow'
+1						;number of zones
+
+! --------------------------------------------------------------------------
+'number and name of zone'
+1
+'water table'
+
+'initial condition'
+0.000
+
+'extent of zone'
+0.0 2.0 0.0 1.0 0.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+'done'
+
+! --------------------------------------------------------------------------
+! BOUNDARY CONDITIONS - VARIABLY-SATURATED FLOW (DATA BLOCK 13)
+! --------------------------------------------------------------------------
+'boundary conditions - variably saturated flow'
+3						;number of zones
+
+! --------------------------------------------------------------------------
+'number and name of zone'
+1
+'inflow'
+
+'boundary type'
+'first' 0.000 
+
+'extent of zone'
+0.0 0.0 0.0 1.0 0.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+! --------------------------------------------------------------------------
+'number and name of zone'
+2
+'outflow'
+
+'boundary type'
+'first' 0.000
+
+'extent of zone'
+2.0 2.0 0.0 1.0 0.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+! --------------------------------------------------------------------------
+'number and name of zone'
+3
+'hollow surface'
+
+'boundary type'
+'second' 0.000
+
+'extent of zone'
+0.0 2.0 0.0 1.0 5.0 5.0
+
+'end of zone'
+! --------------------------------------------------------------------------
+
+'transient boundary conditions'
+
+'done'
+
